@@ -8,7 +8,7 @@ public class Program {
         this.userRepository = userRepository;
     }
 
-    void createUser(String id ,String name) {
+    public void createUser(String name) {
         var user = new User(new UserName(name));
 
         var userService = new UserService(userRepository);
