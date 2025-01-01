@@ -1,9 +1,9 @@
-package com.asagaoroot.ddd.chapter2;
+package com.asagaoroot.ddd.chapter03;
 
 public class UserName {
     private String value;
 
-    public UserName(String value) throws Exception {
+    public UserName(String value) {
         if(value == null) System.out.println("引数がありません");
         if(value.length() < 3) System.out.println("ユーザ名は3文字以上です");
 
