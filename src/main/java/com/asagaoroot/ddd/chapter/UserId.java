@@ -1,4 +1,4 @@
-package com.asagaoroot.ddd.chapter03;
+package com.asagaoroot.ddd.chapter;
 
 public class UserId {
     private String value;
