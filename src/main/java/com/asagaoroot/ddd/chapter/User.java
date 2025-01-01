@@ -1,14 +1,13 @@
-package com.asagaoroot.ddd.chapter03;
+package com.asagaoroot.ddd.chapter;
 
 public class User {
 
     public final UserId userId;
     public UserName userName;
 
-    public User(UserId id ,UserName name) {
-        if(id == null) System.out.println("引数のidがありません");
+    public User(UserName name) {
         if(name == null) System.out.println("引数のnameがありません");
-        this.userId = id;
+        this.userId = new UserId("0"); // dummy
         this.userName = name;
     }
 }
