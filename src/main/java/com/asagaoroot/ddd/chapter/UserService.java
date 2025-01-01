@@ -1,7 +1,7 @@
 package com.asagaoroot.ddd.chapter;
 
 public class UserService {
-    private IUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     public UserService(IUserRepository userRepository) {
         this.userRepository = userRepository;
