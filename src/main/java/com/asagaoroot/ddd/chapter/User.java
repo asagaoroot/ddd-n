@@ -4,6 +4,7 @@ public class User {
 
     public final UserId userId;
     public UserName userName;
+    public UserMail userMail;
 
     // インスタンスを生成する際に利用する。
     public User(UserName name) {
@@ -23,5 +24,10 @@ public class User {
     public void changeName(UserName name) {
         if(name == null) System.out.println("引数のnameがありません");
         this.userName = name;
+    }
+
+    public void changeMail(UserMail mail) {
+        if(mail == null) System.out.println("引数のnameがありません");
+        this.userMail = mail;
     }
 }

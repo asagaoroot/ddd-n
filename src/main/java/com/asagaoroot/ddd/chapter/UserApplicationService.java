@@ -27,16 +27,24 @@ public class UserApplicationService {
         userRepository.save(user);
     }
 
-    public void update(String userId, String name){
+    public void update(String userId, String name, String mail){
         var targetId = new UserId(userId);
         var user = userRepository.find(targetId);
         if(user == null){System.out.println("User does not exist");}
 
-        var newUserName = new UserName(name);
-        user.changeName(newUserName);
-        if(userService.exist(user)){
-            System.out.println("User already exists");
+        if(user == null){
+            var newUserName = new UserName(name);
+            user.changeName(newUserName);
+            if(userService.exist(user)){
+                System.out.println("User already exists");
+            }
         }
+
+        if(mail == null){
+            var newUserMail = new UserMail(mail);
+            user.changeMail(newUserMail);
+        }
+
         userRepository.save(user);
     }
 
