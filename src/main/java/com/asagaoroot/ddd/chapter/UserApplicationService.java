@@ -50,5 +50,13 @@ public class UserApplicationService {
         userRepository.save(user);
     }
 
+    public void delete(String userId){
+        var targetId = new UserId(userId);
+        var user = userRepository.find(targetId);
+
+        if(user == null){System.out.println("User does not exist");}
+        userRepository.delete(user);
+    }
+
 
 }
