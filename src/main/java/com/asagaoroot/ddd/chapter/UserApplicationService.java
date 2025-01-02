@@ -27,12 +27,13 @@ public class UserApplicationService {
         userRepository.save(user);
     }
 
-    public void update(String userId, String name, String mail){
-        var targetId = new UserId(userId);
+    public void update(UserUpdateCommand command){
+        var targetId = new UserId(command.id);
         var user = userRepository.find(targetId);
         if(user == null){System.out.println("User does not exist");}
 
-        if(user == null){
+        var name = command.name;
+        if(name != null){
             var newUserName = new UserName(name);
             user.changeName(newUserName);
             if(userService.exist(user)){
@@ -40,7 +41,8 @@ public class UserApplicationService {
             }
         }
 
-        if(mail == null){
+        var mail = command.mail;
+        if(mail != null){
             var newUserMail = new UserMail(mail);
             user.changeMail(newUserMail);
         }

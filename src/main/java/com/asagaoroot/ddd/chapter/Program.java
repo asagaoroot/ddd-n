@@ -2,7 +2,7 @@ package com.asagaoroot.ddd.chapter;
 
 public class Program {
 
-    private IUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     public Program(IUserRepository userRepository) {
         this.userRepository = userRepository;
